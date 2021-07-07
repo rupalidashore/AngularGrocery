@@ -1,12 +1,12 @@
 <div  >
     <h2 style="color:#094666;"> Grocery List Manager 
-        <img src="../../assets/grocery-bag-image-with-food.png" alt="grocery bag image" width="70" height="70">
+        <img src="../../assets/grocery-bag-image-with-food.png" alt="grocery bag image" width="60" height="60">
     </h2>
  
     <div class="row">
         <div class="col-xs-6 col-md-4">
             <div class="input-group">
-                <input type="text" class="form-control" placeholder="enter grocery items" id="txtSearch" [(ngModel)]="task.name" />
+                <input type="text" class="form-control" placeholder="Enter grocery items" id="txtSearch" [(ngModel)]="task.name" />
                 <div class="input-group-btn">
                     <button class="btn btn-primary" type="button"(click)="onClick()">
         <span class="glyphicon glyphicon-ok"></span>    
@@ -38,17 +38,9 @@
 
     <span (click)="onStrike(task)" [ngClass]="{'strike': task.strike}"> {{ task.name }} </span>
     <!-- <span (click)="onEdit(task)" class="glyphicon glyphicon-pencil floatright"></span> -->
-
-
-   
-
-
-
     <span (click)="onDelete(task)"class="glyphicon glyphicon-remove floatright paddingLeft"></span> 
    
-   
-
-
-</li> 
-  </ul>      
+   </li> 
+  </ul> 
+  <button ion-button clear (click)="clear()" class="btn btn-primary">Clear All</button>    
 </div>

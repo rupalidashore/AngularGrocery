@@ -52,4 +52,8 @@ onStrike(item:any){
     }
   }
 }
+
+public clear(): void {
+  this.tasks = [];
+}
 }
