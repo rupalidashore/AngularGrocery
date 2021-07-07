@@ -1,10 +1,12 @@
 <div  >
-    <h2> Grocery list manager </h2>
+    <h2 style="color:#094666;"> Grocery List Manager 
+        <img src="../../assets/grocery-bag-image-with-food.png" alt="grocery bag image" width="70" height="70">
+    </h2>
  
     <div class="row">
         <div class="col-xs-6 col-md-4">
             <div class="input-group">
-                <input type="text" class="form-control" placeholder="enter grocery items" id="txtSearch" [(ngModel)]="task" />
+                <input type="text" class="form-control" placeholder="enter grocery items" id="txtSearch" [(ngModel)]="task.name" />
                 <div class="input-group-btn">
                     <button class="btn btn-primary" type="button"(click)="onClick()">
         <span class="glyphicon glyphicon-ok"></span>    
@@ -17,11 +19,36 @@
     <br/>
     <ul class="list-group" >
       <li *ngFor="let task of tasks" class="list-group-item" >
-    <span >
-       {{task.name}}
+     <!-- <span>{{task.id}} {{task.name}}</span>  -->
 
- </span> 
-  
+<!-- ****The code inside the select creates the dropdown option representing quantity**** -->
+<select name="quantity" id="quantity">
+    <option value="1">1</option>
+    <option value="2">2</option>
+    <option value="3">3</option>
+    <option value="4">4</option>
+    <option value="5">5</option>
+    <option value="6">6</option>
+    <option value="7">7</option>
+    <option value="8">8</option>
+    <option value="9">9</option>
+    <option value="10">10</option>
+</select>
+
+
+    <span (click)="onStrike(task)" [ngClass]="{'strike': task.strike}"> {{ task.name }} </span>
+    <!-- <span (click)="onEdit(task)" class="glyphicon glyphicon-pencil floatright"></span> -->
+
+
+   
+
+
+
+    <span (click)="onDelete(task)"class="glyphicon glyphicon-remove floatright paddingLeft"></span> 
+   
+   
+
+
 </li> 
   </ul>      
 </div>
