@@ -17,10 +17,19 @@ tasks:any[]=[];
   ngOnInit(): void {
   }
   onClick(){   
+    if(this.task.name.length>0){
     this.tasks.push({id: (new Date()).getTime(),name: this.task.name});    
     this.task.name="";
+    }
   }
    
+  handleKeyDown(event: any){   
+    if(event.keyCode == 13 && this.task.name.length>0)
+    {
+      this.tasks.push({id: (new Date()).getTime(),name: this.task.name});    
+      this.task.name="";
+    }    
+  }
 onEdit(item:any){
   this.task=item
   // for( var i=0;i<this.tasks.length;i++){
