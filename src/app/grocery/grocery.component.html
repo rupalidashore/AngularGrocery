@@ -15,11 +15,13 @@
         </div>
     </div>
     <br/>
-    <ul class="list-group">
-      <li *ngFor="let task of tasks" class="list-group-item">
-    <span>
-      Task list: {{tasks | json}}
-  </span> 
-  </li> 
+    <ul class="list-group" >
+      <li *ngFor="let task of tasks" class="list-group-item" >
+    <span >
+       {{task.name}}
+
+ </span> 
+  
+</li> 
   </ul>      
 </div>

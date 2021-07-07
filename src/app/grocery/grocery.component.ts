@@ -8,13 +8,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class GroceryComponent implements OnInit {
 task:string='';
-tasks : string[] = [];
+tasks: any[]=[];
   constructor() { }
 
   ngOnInit(): void {
   }
   onClick(){
-    this.tasks.push(`name:${this.task}`);
+    this.tasks.push({name: this.task});
   this.task = '';
 }
 
