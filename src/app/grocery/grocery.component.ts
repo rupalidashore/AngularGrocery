@@ -16,7 +16,7 @@ tasks:any[]=[];
 
   ngOnInit(): void {
   }
-  onClick(){      
+  onClick(){                                                // Value added when pressing ok button
     if(this.edit_id>0){
       for( var i=0;i<this.tasks.length;i++){
         if(this.edit_id==this.tasks[i].id){
@@ -38,7 +38,7 @@ tasks:any[]=[];
   }
    
   handleKeyDown(event: any){   
-    if(event.keyCode == 13 && this.task.name.length>0)
+    if(event.keyCode == 13 && this.task.name.length>0)      // Value added when pressing  enter key
     {      
       if(this.edit_id>0){
         for( var i=0;i<this.tasks.length;i++){
@@ -60,7 +60,7 @@ tasks:any[]=[];
   }
 
 
-onDelete(item:any){
+onDelete(item:any){                                 //Delete event
   for( var i=0;i<this.tasks.length;i++){
     if(item.id==this.tasks[i].id){
       this.tasks.splice(i,1);
@@ -69,25 +69,17 @@ onDelete(item:any){
   }
 }
 onStrike(item:any){
-  for(var i = 0;i < this.tasks.length; i++){
+  for(var i = 0;i < this.tasks.length; i++){                      //strike event
     if(item.id == this.tasks[i].id){
-      if(this.tasks[i].strike){
-        this.tasks[i].strike = false;
-      }
-      else{
-        this.tasks[i].strike = true;
-      }
+      this.tasks[i].strike = this.tasks[i].strike?false:true;
       break;
     }
   }
 }
-
-public clear(): void {
+public clear(): void {                                    //clear all item 
   this.tasks = [];  
 }
-
-
-onEdit(item:any){
+onEdit(item:any){                                             //edit item
   this.task=item
   this.edit_id = this.task.id; 
 }
